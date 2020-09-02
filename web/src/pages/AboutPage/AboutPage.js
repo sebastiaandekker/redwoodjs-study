@@ -1,14 +1,10 @@
-import { Link, routes } from '@redwoodjs/router'
+// Redwood has aliases so you don't need ./ or ../ before the import source. Neither do you need to specify the filename inside the directory, because they are the same and taken care of by Redwood.
+import BlogLayout from 'src/layouts/BlogLayout'
 
 const AboutPage = () => {
   return (
     <>
-      <h1>AboutPage</h1>
-      <p>Find me in "./web/src/pages/AboutPage/AboutPage.js"</p>
-      <p>
-        My default route is named "about", link to me with `
-        <Link to={routes.about()}>About</Link>`
-      </p>
+      <BlogLayout>This is the About page !</BlogLayout>
     </>
   )
 }

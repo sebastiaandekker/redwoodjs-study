@@ -1,14 +1,9 @@
-import { Link, routes } from '@redwoodjs/router'
+import BlogLayout from 'src/layouts/BlogLayout'
 
 const HomePage = () => {
   return (
     <>
-      <h1>HomePage</h1>
-      <p>Find me in "./web/src/pages/HomePage/HomePage.js"</p>
-      <p>
-        My default route is named "home", link to me with `
-        <Link to={routes.home()}>Home</Link>`
-      </p>
+      <BlogLayout>This is the Home page!</BlogLayout>
     </>
   )
 }
