@@ -20,6 +20,6 @@ export const Empty = () => <div>Empty</div>
 export const Failure = ({ error }) => <div>Error: {error.message}</div>
 
 // renders if everything loaded correctly
-export const Success = ({ blogPosts }) => {
-  return JSON.stringify(blogPosts)
+export const Success = ({ posts }) => {
+  return JSON.stringify(posts)
 }
