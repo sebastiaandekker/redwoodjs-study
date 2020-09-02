@@ -1,14 +1,12 @@
-import { Link, routes } from '@redwoodjs/router'
+import BlogPostCell from 'src/components/BlogPostCell'
 
-const BlogPostPage = () => {
+// there is an id prop passed through this by Routes.js
+const BlogPostPage = ({ id }) => {
+  console.log('id', id)
+  // Redwood provides a helper that passes on any paramater and makes it available for the query inside the Cell
   return (
     <>
-      <h1>BlogPostPage</h1>
-      <p>Find me in "./web/src/pages/BlogPostPage/BlogPostPage.js"</p>
-      <p>
-        My default route is named "blogPost", link to me with `
-        <Link to={routes.blogPost()}>BlogPost</Link>`
-      </p>
+      <BlogPostCell id={id} />
     </>
   )
 }
