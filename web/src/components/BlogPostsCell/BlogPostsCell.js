@@ -6,6 +6,9 @@ export const QUERY = gql`
   query BlogPostsQuery {
     posts {
       id
+      title
+      body
+      createdAt
     }
   }
 `
@@ -21,5 +24,15 @@ export const Failure = ({ error }) => <div>Error: {error.message}</div>
 
 // renders if everything loaded correctly
 export const Success = ({ posts }) => {
-  return JSON.stringify(posts)
+  return posts.map((post) => (
+    <article key={post.id}>
+      <header>
+        <h2>{post.title}</h2>
+      </header>
+      <p>{post.body}</p>
+      <div>
+        Posted at: <time>{post.createdAt}</time>
+      </div>
+    </article>
+  ))
 }

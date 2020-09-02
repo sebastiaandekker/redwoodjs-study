@@ -1,3 +1,4 @@
+// Redwood automatically imports React
 import BlogLayout from 'src/layouts/BlogLayout'
 import BlogPostsCell from 'src/components/BlogPostsCell'
 
