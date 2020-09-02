@@ -1,3 +1,5 @@
+import { Link, routes } from '@redwoodjs/router'
+
 const BlogLayout = ({ children }) => {
   return (
     <>
@@ -11,7 +13,7 @@ const BlogLayout = ({ children }) => {
           </li>
         </ul>
       </nav>
-      {children}
+      <main>{children}</main>
     </>
   )
 }
