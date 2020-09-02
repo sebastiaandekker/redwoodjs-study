@@ -1,5 +1,6 @@
 // Cells are a declarative approach to data fetching and one of Redwood's signature modes of abstraction.
 // a Cell is just a higher-order component that executes a GraphQL query and manages its lifecycle.
+import { Link, routes } from '@redwoodjs/router'
 
 // gql query to get the data
 export const QUERY = gql`
@@ -27,7 +28,9 @@ export const Success = ({ posts }) => {
   return posts.map((post) => (
     <article key={post.id}>
       <header>
-        <h2>{post.title}</h2>
+        <h2>
+          <Link to={routes.blogPost({ id: post.id })}>{post.title}</Link>
+        </h2>
       </header>
       <p>{post.body}</p>
       <div>

@@ -10,8 +10,10 @@
 import { Router, Route } from '@redwoodjs/router'
 
 const Routes = () => {
+  // /blog-posts/{id}: there is going to be another part to this url /blog-posts/ and i want Redwood to put in a variable id
   return (
     <Router>
+      <Route path="/blog-post/{id}" page={BlogPostPage} name="blogPost" />
       <Route path="/posts/new" page={NewPostPage} name="newPost" />
       <Route path="/posts/{id:Int}/edit" page={EditPostPage} name="editPost" />
       <Route path="/posts/{id:Int}" page={PostPage} name="post" />
