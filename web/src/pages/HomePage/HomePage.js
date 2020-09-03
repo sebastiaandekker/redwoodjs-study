@@ -1,9 +1,13 @@
+// Redwood automatically imports React
 import BlogLayout from 'src/layouts/BlogLayout'
+import BlogPostsCell from 'src/components/BlogPostsCell'
 
 const HomePage = () => {
   return (
     <>
-      <BlogLayout>This is the Home page!</BlogLayout>
+      <BlogLayout>
+        <BlogPostsCell />
+      </BlogLayout>
     </>
   )
 }
