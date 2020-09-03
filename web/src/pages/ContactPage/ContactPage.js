@@ -5,6 +5,7 @@ import {
   TextField,
   TextAreaField,
   FieldError,
+  FormError,
   Submit,
 } from '@redwoodjs/forms'
 import { useMutation } from '@redwoodjs/web'
@@ -23,7 +24,7 @@ const ContactPage = () => {
 
   // mutation handler for creating a contact
   // you can also get some usefull variables like loading from useMutation
-  const [create, { loading }] = useMutation(CREATE_CONTACT, {
+  const [create, { loading, error }] = useMutation(CREATE_CONTACT, {
     // when mutation is finished then reset the form and alert user
     onCompleted: () => {
       formMethods.reset()
@@ -46,7 +47,12 @@ const ContactPage = () => {
         onSubmit={onSubmit}
         validation={{ mode: 'onBlur' }}
         formMethods={formMethods}
+        error={error}
       >
+        <FormError
+          error={error}
+          wrapperStyle={{ color: 'red', backgroundColor: 'lavenderblush' }}
+        />
         <Label name="name" errorClassName="error">
           Your name
         </Label>
@@ -65,12 +71,7 @@ const ContactPage = () => {
         <TextField
           name="email"
           errorClassName="error"
-          validation={{
-            required: true,
-            pattern: {
-              value: /[^@]+@[^\.]+\..+/,
-            },
-          }}
+          validation={{ required: true }}
         />
         <FieldError className="error" name="email" />
 
