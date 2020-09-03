@@ -22,4 +22,10 @@ export const schema = gql`
     email: String
     message: String
   }
+
+  type Mutation {
+    // createContact will take the CreateContactInput as required input
+    // when it is done it will return the new Contact
+    createContact(input: CreateContactInput!): Contact
+  }
 `
